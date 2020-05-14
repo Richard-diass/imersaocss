@@ -6,9 +6,9 @@
 }
 
 body {
-    background-image: url('../img/fundo.jpg');
+    background-color: whitesmoke;
     background-size: auto 100vh;
-    font-family: century;
+    font-family: 'Roboto', sans-serif;
     height: 100vh
     font-size: 12px;
   }
@@ -34,7 +34,7 @@ body {
   }
 
   header {
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,13 +79,61 @@ body {
   
   .site-title {
     font-size: 3em;
+    font-family: 'Handlee', cursive;
   }
 
   .site-subtitle {
     font-style: italic;
+    font-family: 'Handlee', cursive;
+  }
+
+  .portfolio {
+    padding: 3em;
+    height: 100vh;
+  }
+
+  .portfolio h2 {
+    font-family: 'Rancho', cursive;
+    color: grey;
+    margin-bottom: 1em;
+    font-size: 2em;
+  }
+
+  .portfolio .grid {
+    display: grid;
+    gap: 1.5em;
+  }
+
+  @media (min-width: 500px) {
+    .portfolio .grid{
+      grid-template-columns: 220px 220px;
+    }
+  }
+  
+  @media (min-width: 750px) {
+    .portfolio .grid{
+      grid-template-columns: repeat( 3, 240px);
+      align-content: center;
+      justify-content: center;
+      height: calc(100vh - 8em - 48px);
+    }
+  }
+
+  .portfolio figure{
+    text-align: center;
   }
 
   .img-portfolio {
     height: 180px;
-    width: 180px;
+    width: 220px;
+    object-fit: cover;
+    object-position: left bottom;
+  }
+
+  @media (min-width: 1200px ) {
+    .img-portfolio {
+       height: 10em;
+       width: 100%;
+    
+    }
   }
