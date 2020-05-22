@@ -1,180 +1,253 @@
-/*reset do css*/
+/* soft reset do css */
 * {
   margin: 0;
-  padding:0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-    background-image: url("https://image.freepik.com/fotos-gratis/parede-de-madeira-riscado-conceito-material-da-textura-do-fundo_53876-42920.jpg");
-    background-size: auto 100vh;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh
-    font-size: 12px;
-  }
-  
-  /* se a tela tiver pelomenos 400px, vai carregar esses estilos*/
-  @media (min-width: 400px) {
-    body {
-      font-size: 14px;
-    }
-  }
+  background-image: url('https://image.freepik.com/fotos-gratis/parede-de-madeira-riscado-conceito-material-da-textura-do-fundo_53876-42920.jpg');
+  background-size: auto 100vh; 
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  font-size: 12px;
+}
 
-  /* breakpoint */
-  @media (min-width: 600px) {
-    body {
-      font-size: 18px;
-    }
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
   }
+}
 
-  @media (min-width: 800px) {
-    body {
-      font-size: 20px;
-    }
+/* breakpoint */
+@media (min-width: 600px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 18px;
   }
+}
 
-  header {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* breakpoint */
+@media (min-width: 1200px) {
+  body {
+   
+    font-size: 20px;
   }
+}
 
-  .menu {
-    background-color: #f0f0ca;
-    position: fixed;
-    width: 100vw;
-    top: 0;
-    z-index: 1;
-  }
-  
-  .menu ul {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .menu li {
-    list-style: none;
-  }
-  
-  .menu a {
-    display: block;
-    padding: 15px 30px;
-    background: grey;
-    transition: background-color 0.75s, color 0.5s;
-  }
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .menu a:active,
-  .menu a:hover {
-    background-color: #1133ff;
-    color: black;
-  }
+.menu {
+  background-color: #f0f0ca;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+}
 
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration:underline;
-  }
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
 
-  .titulo {
+.menu li {
+ list-style: none; 
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  background: grey;
+  transition: background-color 0.75s, color 0.5s;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color: #1133ff;
+  color: black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  animation: linear 1s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+  from {
     transform: scale(0.2) translateY(50vh);
-    opacity: 0; 
-
-    animation: linear 1s animacaoTitulo forwards;
+    opacity: 0;
   }
-
-  @keyframes animacaoTitulo {
-    from {
-      transform: scale(0.2) translateY(50vh);
-    opacity: 0; 
-    }
-    to {
-      transform: scale(1) translateY(0);
+  to {
+    transform: scale(1) translateY(0);
     opacity: 1;
-    }
   }
-  
-  .site-subtitle,
-  .site-title {
-    color: #1133ff;
-    text-align: center;
-  }
-  
-  .site-title {
-    font-size: 3em;
-    font-family: 'Handlee', cursive;
-  }
+}
 
-  .site-subtitle {
-    font-style: italic;
-    font-family: 'Handlee', cursive;
-  }
-
-  .contato, 
-  .portfolio {
-    padding: 3em;
-    min-height: 100vh;
-  }
-
-  .contato, 
-  .portfolio h2 {
-    font-family: 'Rancho', cursive;
-    color: grey;
-    margin-bottom: 1em;
-    font-size: 2em;
-  }
-
-  .portfolio .grid {
-    display: grid;
-    gap: 1.5em;
-  }
-
-  @media (min-width: 450px) {
-    .portfolio .grid{
-      grid-template-columns: 220px 220px;
-    }
-  }
-  
-  @media (min-width: 700px) {
-    .portfolio .grid{
-      grid-template-columns: repeat( 3, 240px);
-      align-content: center;
-      justify-content: center;
-      height: calc(100vh - 8em - 48px);
-    }
-  }
-
-  .portfolio figure{
-    text-align: center;
-  }
-
-  .img-portfolio {
-    height: 180px;
-    width: 220px;
-    object-fit: cover;
-    object-position: left bottom;
-    transition: transform 0.5s;
-  }
-
-  .img-portfolio:hover {
-    transform: scale(1.23);
-  }
-
-.contato .icons{
+.site-subtitle, 
+.site-title {
+  color: #1133ff;
   text-align: center;
 }
 
- .contato a {
-   color: black;
-   font-size: 2em;
-   transition: text-shadow 0.48s;
- }
+.site-title {
+  font-size: 3em;
+  font-family: 'Handlee', cursive;
+}
 
- .contato a:active,
- .contato a:hover{
-   text-decoration: none;
-   text-shadow: 0px 0px 10px rgb(233, 139, 17);
- }
+.site-subtitle {
+ font-style: italic;
+ font-family: 'Handlee', cursive;
+ line-height: 1.8em;
+}
+
+.sobre,
+.contato,
+.portfolio {
+  padding: 3em;
+  min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+  font-family: 'Rancho', cursive;
+  color: grey;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+.sobre p {
+  color: black;
+  text-indent: 1.4em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+
+.sobre a {
+  color: darkblue;
+}
+
+.sobre a:hover {
+  color: darkcyan;
+}
+
+.sobre .avatar {
+  float: left;
+  margin-right: 1em;
+}
+
+.sobre .avatar img {
+  border-radius: 30px;
+}
+
+
+.portfolio .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+  }
+}
+
+.flip-card {
+  height: 180px;
+  perspective: 1000px;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .7);
+  height: 180px;
+  width: 100%;
+  transform: rotateY(180deg);
+}
+
+.portfolio figure {
+  text-align: center;
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  transition: transform 500ms;
+}
+
+/* .img-portfolio:hover {
+  transform: scale(1.2) rotate(-2deg);
+} */
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: black;
+  font-size: 4em;
+  transition: text-shadow 0.48s;
+}
+
+.contato a:active,
+.contato a:hover  {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px rgb(233, 139, 17);
+}
